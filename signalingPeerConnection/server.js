@@ -16,8 +16,12 @@ app.use(express.static(__dirname))
 const expressServer = https.createServer(app);
 //create our socket.io server... it will listen to our express port
 const io = socketio(expressServer);
-expressServer.listen(8181);
+//expressServer.listen(8181);
+const port = process.env.PORT || 8181;
 
+expressServer.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 //offers will contain {}
 const offers = [
     // offererUserName
