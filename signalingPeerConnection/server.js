@@ -15,7 +15,7 @@ const cert = fs.readFileSync('cert.crt');
 
 //we changed our express setup so we can use https
 //pass the key and cert to createServer on https
-const expressServer = https.createServer({key, cert}, app);
+const expressServer = https.createServer(app);
 //create our socket.io server... it will listen to our express port
 const io = socketio(expressServer);
 expressServer.listen(8181);
