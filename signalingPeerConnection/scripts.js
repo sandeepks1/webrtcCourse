@@ -2,7 +2,7 @@ const userName = "Rob-"+Math.floor(Math.random() * 100000)
 const password = "x";
 document.querySelector('#user-name').innerHTML = userName;
 
-const socket = io.connect('https://localhost:8181/',{
+const socket = io.connect('https://appshare.onrender.com',{
     auth: {
         userName,password
     }
